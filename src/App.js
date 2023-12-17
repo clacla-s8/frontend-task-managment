@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import TaskList from "./components/task-list/TaskList";
+import TaskForm from "./components/task-form/TaskForm";
+import Modal from "./components/modal/modal";
+import "./App.css";
 
 function App() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="container">
+        <TaskList openModal={toggleModal} />
+        <button className="btn btn-1" onClick={() => setIsModalOpen(true)}>
+          Nova tarefa
+        </button>
+
+        <Modal visible={isModalOpen} setVisible={setIsModalOpen}>
+          <TaskForm setIsModalOpen={setIsModalOpen} />
+        </Modal>
+      </div>
     </div>
   );
 }
