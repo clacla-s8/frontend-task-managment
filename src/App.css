@@ -73,7 +73,10 @@
 @media (max-width: 768px) {
   .card-grid {
     grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
   }
+
   .btn {
     padding: 10px 20px;
     margin: 10px 0;
@@ -81,6 +84,32 @@
   .container {
     display: flex;
     justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (min-width: 770px) {
+  .card-grid {
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    margin: 10px 0;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (min-width: 900px) {
+  .card-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
     align-items: center;
   }
 }

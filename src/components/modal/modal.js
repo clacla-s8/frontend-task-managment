@@ -18,4 +18,4 @@ export default function Modal({ visible, setVisible, children }) {
   );
 }
 
-//{/* <button onClick={() => setVisible(false)}>Close</button> */}
+

@@ -1,4 +1,4 @@
-// taskSaga.js
+
 import { put, takeLatest } from "redux-saga/effects";
 import {
   FETCH_TASKS,
@@ -56,7 +56,7 @@ function* finishTaskSaga(action) {
     const response = yield axios.patch(
       `http://localhost:8090/tasks/${action.payload}/finish`
     );
-    yield put(finishTaskSuccess(response.data)); // Assuming the updated task is returned by the backend
+    yield put(finishTaskSuccess(response.data));
   } catch (error) {
     yield put(finishTaskFailure(error.message));
   }

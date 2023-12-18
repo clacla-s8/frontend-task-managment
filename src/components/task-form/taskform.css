@@ -1,5 +1,5 @@
 .container {
-  max-width: 90%; /* Adjust this value as needed */
+  max-width: 90%;
   margin: auto;
 }
 
@@ -46,6 +46,6 @@ input[type="submit"]:hover {
 }
 @media (min-width: 600px) {
   .container {
-    max-width: 70%; /* Adjust this value as needed */
+    max-width: 70%;
   }
 }

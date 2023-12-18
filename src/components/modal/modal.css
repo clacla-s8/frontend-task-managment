@@ -46,12 +46,12 @@
 
 @media (max-width: 600px) {
   .modal-overlay .modal-body {
-    width: 90%; /* Adjust for smaller screens */
-    height: auto; /* Allow height to adjust based on content */
+    width: 90%; 
+    height: auto; 
   }
 
   input,
   select {
-    width: 100%; /* Full width for smaller screens */
+    width: 100%; 
   }
 }
