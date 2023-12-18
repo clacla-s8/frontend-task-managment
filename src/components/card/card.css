@@ -1,29 +1,72 @@
 .card {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 250px;
   border-radius: 8px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  padding: 0;
+  padding: 0; */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: calc(100% / 3 - 60px);
+  margin: 10px;
+  padding: 20px;
+  box-shadow: 2px 2px 16px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  background-color: white;
+  transition: all 0.5s ease;
+}
+
+.card:hover {
+  transform: scale(1.1);
+  z-index: 1;
 }
 
 .card img {
-  border-radius: 8px 8px 0 0;
-  width: 250px;
-  height: 200px;
+  width: 35%;
+  height: auto;
+  border-radius: 5px;
 }
 
+button {
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  color: white;
+}
+.button-edit {
+  background-color: green;
+  margin-right: 3px;
+}
 
-@media (max-width: 600px) {
+.button-delete {
+  background-color: red;
+  margin-left: 3px;
+}
+span {
+  margin-bottom: 4px;
+}
+
+@media (max-width: 768px) {
   .card {
     width: 100%;
   }
 
   .card img {
-    width: 100%;
-    height: auto;
+    width: 35%;
+  }
+}
+
+@media (max-width: 600px) {
+  .card {
+    width: 35%;
+  }
+
+  .card img {
+    width: 35%;
   }
 }
 
@@ -33,8 +76,7 @@
   }
 
   .card img {
-    width: 100%;
-    height: auto;
+    width: 35%;
   }
 }
 
@@ -44,7 +86,7 @@
   }
 
   .card img {
-    width: 100%;
+    width: 40%;
     height: auto;
   }
 }
