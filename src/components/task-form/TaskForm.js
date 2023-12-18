@@ -76,6 +76,7 @@ const TaskForm = ({ setIsModalOpen }) => {
           id="image"
           name="image"
           onChange={handleImageChange}
+          required
         />
 
         <label>Task Status:</label>
