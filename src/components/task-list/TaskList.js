@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchTasks } from "../../repositories/actions/taskActions";
 import { Card } from "../card/card";
 
-const TaskList = ({ openModal }) => {
+const TaskList = ({ openEditModal }) => {
   const dispatch = useDispatch();
   const { tasks, loading, error } = useSelector((state) => state.tasks);
 
@@ -24,8 +24,8 @@ const TaskList = ({ openModal }) => {
       <h2>Task List</h2>
       <div className="card-grid">
         {tasks.map((task) => (
-          <Card
-            key={task.id}
+          <Card 
+            id={task.id}
             name={task.name}
             description={task.description}
             status={task.status ? "Finalizada" : "Pendente"}
