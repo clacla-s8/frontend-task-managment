@@ -40,11 +40,13 @@ button {
 .button-edit {
   background-color: green;
   margin-right: 3px;
+  cursor: pointer;
 }
 
 .button-delete {
   background-color: red;
   margin-left: 3px;
+  cursor: pointer;
 }
 span {
   margin-bottom: 4px;
