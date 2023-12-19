@@ -16,7 +16,12 @@ export function Card({ id, name, description, image, status }) {
   };
   return (
     <div className="card">
-      <img src={imageUrl} alt={`${name} task`} />
+      <img
+        src={imageUrl}
+        alt={`${name} task`}
+        id="full"
+        onClick={() => toggleFullScreen("full")}
+      />
 
       <h3>{name}</h3>
       <p>
@@ -39,4 +44,29 @@ export function Card({ id, name, description, image, status }) {
       </div>
     </div>
   );
+
+  function toggleFullScreen(id) {
+    var div = document.getElementById(id);
+
+    if (
+      (document.fullScreenElement && document.fullScreenElement !== null) ||
+      (!document.mozFullScreen && !document.webkitIsFullScreen)
+    ) {
+      if (div.requestFullScreen) {
+        div.requestFullScreen();
+      } else if (div.mozRequestFullScreen) {
+        div.mozRequestFullScreen();
+      } else if (div.webkitRequestFullScreen) {
+        div.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+      }
+    } else {
+      if (document.cancelFullScreen) {
+        document.cancelFullScreen();
+      } else if (document.mozCancelFullScreen) {
+        document.mozCancelFullScreen();
+      } else if (document.webkitCancelFullScreen) {
+        document.webkitCancelFullScreen();
+      }
+    }
+  }
 }
