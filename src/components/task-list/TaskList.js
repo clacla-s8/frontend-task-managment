@@ -12,19 +12,20 @@ const TaskList = ({ openEditModal }) => {
   }, [dispatch]);
 
   if (loading) {
-    return <p>Loading...</p>;
+    return <p>Carregando...</p>;
   }
 
   if (error) {
-    return <p>Error: {error}</p>;
+    return <p>Erro: {error}</p>;
   }
 
   return (
     <div>
-      <h2>Task List</h2>
+      {tasks.length > 0 && <h2>Lista de Tarefas</h2>}
       <div className="card-grid">
         {tasks.map((task) => (
-          <Card 
+          <Card
+            key={task.id}
             id={task.id}
             name={task.name}
             description={task.description}
