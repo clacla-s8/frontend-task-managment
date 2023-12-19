@@ -19,8 +19,8 @@ export function Card({ id, name, description, image, status }) {
       <img
         src={imageUrl}
         alt={`${name} task`}
-        id="full"
-        onClick={() => toggleFullScreen("full")}
+        id={`${id}full`}
+        onClick={() => toggleFullScreen(`${id}full`)}
       />
 
       <h3>{name}</h3>
