@@ -24,8 +24,8 @@ const TaskForm = ({ setIsModalOpen }) => {
     formData.append("name", taskData.name);
     formData.append("description", taskData.description);
     if (taskData.image) {
-        formData.append("image", taskData.image);
-      }
+      formData.append("image", taskData.image);
+    }
     formData.append("status", taskData.status);
 
     dispatch(createTask(formData));
@@ -45,12 +45,11 @@ const TaskForm = ({ setIsModalOpen }) => {
     setTaskData({ ...taskData, image: file });
   };
 
-
   return (
     <div className="container">
       <h2>Cadastre uma nova tarefa</h2>
       <form onSubmit={handleSubmit} className="form-group">
-        <label>Task Name:</label>
+        <label>Nome:</label>
         <input
           type="text"
           id="name"
@@ -60,7 +59,7 @@ const TaskForm = ({ setIsModalOpen }) => {
           required
         />
 
-        <label>Task Description:</label>
+        <label>Descrição:</label>
         <input
           type="text"
           id="description"
@@ -70,7 +69,7 @@ const TaskForm = ({ setIsModalOpen }) => {
           required
         />
 
-        <label>Task Image URL:</label>
+        <label>Imagem:</label>
         <input
           type="file"
           id="image"
@@ -79,7 +78,7 @@ const TaskForm = ({ setIsModalOpen }) => {
           required
         />
 
-        <label>Task Status:</label>
+        <label>Status:</label>
         <select
           id="status"
           name="status"
